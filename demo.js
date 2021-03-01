@@ -49,13 +49,13 @@
         scene.onKeyboardObservable.add((kbInfo) => {
             console.log(kbInfo.type);
             if (kbInfo.type === BABYLON.KeyboardEventTypes.KEYDOWN) {
-                if (kbInfo.event.keyCode === 'UpArrow' || kbInfo.event.keyCode == 87) {
+                if (kbInfo.event.keyCode === 'ArrowUp' || kbInfo.event.keyCode == 87) {
                     footsteps.setVolume(1);
                     console.log("KEY DOWN: ", kbInfo.event.key);
                     console.log('Player Position X:', camera.position.x.toFixed(2), 'Y:', camera.position.y.toFixed(2), 'Z:', camera.position.z.toFixed(2));
                 }
             } else if (kbInfo.type === BABYLON.KeyboardEventTypes.KEYUP) {
-                if (kbInfo.event.keyCode === 'UpArrow' || kbInfo.event.keyCode == 87) {
+                if (kbInfo.event.keyCode === 'ArrowUp' || kbInfo.event.keyCode == 87) {
                     footsteps.setVolume(0);
                     console.log("KEY UP: ", kbInfo.event.key);
                 }
