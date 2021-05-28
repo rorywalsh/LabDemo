@@ -2,7 +2,7 @@
 
 var canvas = document.getElementById("renderCanvas");
 
-
+var sceneLocation = "../../../Scenes/";
 
 
 // UI
@@ -92,6 +92,9 @@ var loadScene = function (name, incremental, sceneLocation, then) {
     engine.resize();
 
     var dlCount = 0;
+    //loads from local file
+    //BABYLON.SceneLoader.Load(sceneLocation + name + "/", name + incremental + ".babylon", engine, function (newScene) {
+    //loads from remote URL
     BABYLON.SceneLoader.Load("https://raw.githubusercontent.com/rorywalsh/LabDemo/master/Scenes/Heart/", "Heart.babylon", engine, function (newScene) {
         scene = newScene;
         scene.executeWhenReady(function () {
