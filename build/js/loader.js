@@ -1,6 +1,4 @@
-﻿/// <reference path="babylon.js" />
-
-asdfasdf
+/// <reference path="babylon.js" />
 
 var canvas = document.getElementById("renderCanvas");
 
