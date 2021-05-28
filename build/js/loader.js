@@ -2,7 +2,7 @@
 
 var canvas = document.getElementById("renderCanvas");
 
-hello there
+consoel.hello there
 
 // UI
 var controlPanel = document.getElementById("controlPanel");
