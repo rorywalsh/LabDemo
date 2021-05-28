@@ -3,6 +3,8 @@
 var canvas = document.getElementById("renderCanvas");
 
 
+
+
 // UI
 var controlPanel = document.getElementById("controlPanel");
 var cameraPanel = document.getElementById("cameraPanel");
