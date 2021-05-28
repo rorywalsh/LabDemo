@@ -23,8 +23,6 @@ var toggleSepia = document.getElementById("toggleSepia");
 
 var sceneChecked;
 
-var sceneLocation = "https://github.com/rorywalsh/LabDemo/Scenes/";
-
 // Babylon
 var engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true });
 var scene;
@@ -91,7 +89,7 @@ var loadScene = function (name, incremental, sceneLocation, then) {
     engine.resize();
 
     var dlCount = 0;
-    BABYLON.SceneLoader.Load(sceneLocation + name + "/", name + incremental + ".babylon", engine, function (newScene) {
+    BABYLON.SceneLoader.Load("https://raw.githubusercontent.com/rorywalsh/LabDemo/master/Scenes/Heart/Heart.babylon", engine, function (newScene) {
         scene = newScene;
         scene.executeWhenReady(function () {
             canvas.style.opacity = 1;
