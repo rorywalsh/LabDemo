@@ -23,7 +23,7 @@ var toggleSepia = document.getElementById("toggleSepia");
 
 var sceneChecked;
 
-var sceneLocation = "../../Scenes/";
+var sceneLocation = "https://github.com/rorywalsh/LabDemo/Scenes/";
 
 // Babylon
 var engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true });
