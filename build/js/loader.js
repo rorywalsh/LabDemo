@@ -1,5 +1,7 @@
 ﻿/// <reference path="babylon.js" />
 
+asdfasdf
+
 var canvas = document.getElementById("renderCanvas");
 
 // UI
