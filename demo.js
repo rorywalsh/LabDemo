@@ -28,9 +28,9 @@
         scene.fogColor = scene.clearColor;
 
         let triggerSounds = [];
-        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/2.wav", x: 2, z: 0.5, visible:false }));
-        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/3.wav", x: 4.8, z: -3, visible:false }));
-        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/4.wav", x: -5, z: -1, visible:false }));
+        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/2.wav", x: 2, z: 0.5, visible:true }));
+        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/3.wav", x: 4.8, z: -3, visible:true }));
+        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/4.wav", x: -5, z: -1, visible:true }));
 
 
 
