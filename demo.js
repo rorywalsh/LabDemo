@@ -28,71 +28,23 @@
         scene.fogColor = scene.clearColor;
 
         let triggerSounds = [];
-        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/collision1.wav", x: 2, z: 0.5 }));
-        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/collision1.wav", x: 4.8, z: -3 }));
+        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/2.wav", x: 2, z: 0.5, visible:false }));
+        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/3.wav", x: 4.8, z: -3, visible:false }));
+        triggerSounds.push(new OneShotCollisionSound({ file: "./build/assets/4.wav", x: -5, z: -1, visible:false }));
 
 
 
-        var footstepSounds = [];
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep1.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
+        var footstepSounds = new BABYLON.Sound("Footsteps1", "./build/assets/footsteps.ogg", scene, null, {
+            loop: true,
+            autoplay: true,
             volume: 1
-        }));
+        });
 
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep2.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
-            volume: 1
-        }));
 
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep3.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
-            volume: 1
-        }));
-
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep4.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
-            volume: 1
-        }));
-
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep5.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
-            volume: 1
-        }));
-
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep6.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
-            volume: 1
-        }));
-
-        footstepSounds.push(new BABYLON.Sound("Footsteps1", "./build/assets/footstep7.ogg", scene, null, {
-            loop: false,
-            autoplay: false,
-            volume: 1
-        }));
 
         let isWalking = false;
         let prevIndex = -1;
 
-        function playFootstepSound() {
-            let index = Math.floor(Math.random() * (footstepSounds.length - 1));
-            if (index === prevIndex && prevIndex < 6)
-                index = prevIndex + 1;
-            else if (index === prevIndex && prevIndex == 6)
-                index = 0;
-
-            if (isWalking === true) {
-                footstepSounds[index].setVolume(Math.random() * .2 + .8);
-                footstepSounds[index].play();
-                setTimeout(playFootstepSound, Math.random() * 100 + 500);
-            }
-            prevIndex = index;
-        }
 
         // Load the sound and play it automatically once ready
         var bubbles = new BABYLON.Sound("Bubbling", "./build/assets/bubbling.ogg", scene, null, {
@@ -110,16 +62,16 @@
             if (kbInfo.type === BABYLON.KeyboardEventTypes.KEYDOWN) {
                 if (kbInfo.event.key === 'ArrowUp' || kbInfo.event.keyCode == 87) {
                     if (isWalking === false)
-                        setTimeout(playFootstepSound, 0);
+                    footstepSounds.setVolume(.5);
                     isWalking = true;
                 }
             } else if (kbInfo.type === BABYLON.KeyboardEventTypes.KEYUP) {
                 console.log(kbInfo.event.key);
                 if (kbInfo.event.key === 'ArrowUp' || kbInfo.event.keyCode == 87) {
+                    footstepSounds.setVolume(0);
                     isWalking = false;
                 }
             }
-
         });
 
         // GUI
